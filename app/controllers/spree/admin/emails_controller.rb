@@ -1,10 +1,10 @@
 class Spree::Admin::EmailsController < Spree::Admin::BaseController
   
-  resource_controller
+#  resource_controller
   
   before_filter :get_subscribers, :only => [:new, :create, :edit, :update]
   
-  destroy.success.wants.js { render_js_for_destroy }
+#  destroy.success.wants.js { render_js_for_destroy }
 
   def deliver
     @email = object
