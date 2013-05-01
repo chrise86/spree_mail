@@ -4,6 +4,8 @@ class Subscriber < ActiveRecord::Base
   
   # ?? Do we need these scopes anywhere else 
   # -> DRY (Later task)
+  self.table_name = "spree_subscribers"
+
   scope :active, where("unsubscribed_at IS NULL").order(:name)
   scope :unsubscribed, where("unsubscribed_at IS NOT NULL").order(:name)
   

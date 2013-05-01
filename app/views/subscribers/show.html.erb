@@ -2,13 +2,3 @@
 
 <p><%= t('unsubscribe_mail') %>:</p>
 
-<%= form_for @subscriber, :url => unsubscribe_subscriber_path(@subscriber.token) do |form| %>
-  <p>
-    <%= form.label :email %>
-    <%= form.email_field :email, :value => "" %>
-  </p>
-  <p>
-    <%= form.submit t('unsubscribe') %> or
-    <%= link_to t('cancel'), :back %>
-  </p>
-<% end %>
