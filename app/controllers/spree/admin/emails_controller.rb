@@ -30,7 +30,7 @@ class Admin::EmailsController < Admin::BaseController
     def collection
       params[:search] ||= {}
       params[:search][:meta_sort] ||= "subject.asc"
-      @search = end_of_association_chain.metasearch(params[:search])
+      @search = end_of_association_chain.ransack(params[:search])
       @collection = @search.paginate(:per_page => Spree::Config[:admin_products_per_page], :page => params[:page])
     end
  

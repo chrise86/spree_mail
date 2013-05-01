@@ -1,0 +1,27 @@
+<% content_for :page_title do %>
+  <%= t(:listing_subscribers) %>
+<% end %>
+<%= @q %>
+<% if @collection.empty? %>
+  no subscribers
+<% else %>
+<table class="index">
+  <thead>
+  <tr>
+    <th><%= t('name') %></th>
+    <th><%= t('email') %></th>
+    <th><%= t('action') %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @collection.each do |c| %>
+  <tr>
+    <td><%= c.name %></td>
+    <td><%= c.email %></td>
+    <td><%= link_to "edit", "/admin/subscribers/#{c.id}/edit" %> || <%= link_to "view", "/admin/subscribers/#{c.id}/" %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
+<% end %>
+
