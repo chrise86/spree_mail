@@ -1,4 +1,4 @@
-class Spree::Admin::EmailsController < Admin::BaseController
+class Spree::Admin::EmailsController < Spree::Admin::BaseController
   
   resource_controller
   
